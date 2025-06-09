@@ -23,6 +23,16 @@ jobs:
         with:
           php-version: '8.4'
 
+      - name: Setup Node.js
+        uses: action/setup-node@v3
+        with: 
+          node-version: '18'
+
+      - name: install npm dependencies and build frontend
+        run: 
+          npm install
+          npm run build
+
       - name: Check if composer.json exists
         id: check_files
         uses: andstor/file-existence-action@v1
